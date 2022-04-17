@@ -5,7 +5,8 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies="deb1 deb2 php$YNH_DEFAULT_PHP_VERSION-deb1 php$YNH_DEFAULT_PHP_VERSION-deb2"
+pkg_dependencies="python3 python-dev python-pip virtualenv python3-psycopg2 python3-ldap \
+                  build-essential libssl-dev libffi-dev libsasl2-dev libldap2-dev default-libmysqlclient-dev"
 
 #=================================================
 # PERSONAL HELPERS
