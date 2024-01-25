@@ -3,7 +3,3 @@
 test_format = 1.0
 
 [default]
-
-    preinstall = """
-    sudo yunohost user group add admins package_checker
-    """
