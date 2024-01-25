@@ -38,7 +38,6 @@ Superset provides:
 ## Screenshots
 
 ![Screenshot of Apache Superset](./doc/screenshots/explore.jpg)
-![Screenshot of Apache Superset](./doc/screenshots/explore.jpg:Zone.Identifier)
 
 ## Documentation and resources
 
