@@ -23,7 +23,7 @@ yunohost = '>= 11.2'
 architectures = "all"
 multi_instance = true
 ldap = true
-sso = "false"
+sso = false
 disk = "1G"
 ram.build = "500M"
 ram.runtime = "500M"
@@ -40,6 +40,8 @@ ram.runtime = "500M"
     [install.init_admin_permission]
     type = "group"
     default = "admins"
+    ask.en = "Select which group should have Admin role in Superset. Other roles (Alpha, Gamma, Public) can be defined after installation."
+    ask.fr = "Sélectionnez quel groupe devrait avoir le rôle Admin dans Superset. Les autres rôles (Alpha, Gamma, Public) pourront être définis après installation."
 
 [resources]
 
