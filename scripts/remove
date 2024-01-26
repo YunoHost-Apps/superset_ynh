@@ -13,7 +13,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Removing user database for $app..."
 
-ynh_mysql_remove_db --db_user=$userdata_db_user --db_name=$userdata_db_name
+ynh_psql_remove_db --db_user=$userdata_db_user --db_name=$userdata_db_name
 
 #=================================================
 # REMOVE SYSTEM CONFIGURATIONS
