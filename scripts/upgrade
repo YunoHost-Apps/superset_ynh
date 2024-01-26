@@ -44,7 +44,7 @@ ynh_script_progression --message="Upgrading app..." --weight=5
 # Prepare environment
 python3.9 -m venv --upgrade $install_dir/venv
 localpath=$install_dir/venv/bin:$PATH
-environment="FLASK_APP=$app SUPERSET_CONFIG_PATH=$install_dir/superset_config.py SUPERSET_SECRET_KEY=$secret_key"
+environment="FLASK_APP=superset SUPERSET_CONFIG_PATH=$install_dir/superset_config.py SUPERSET_SECRET_KEY=$secret_key"
 export $environment
 
 # Install and initialize Superset
