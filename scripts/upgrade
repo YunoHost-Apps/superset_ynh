@@ -51,7 +51,7 @@ export $environment
 pushd $install_dir
 (
     source venv/bin/activate
-    ynh_exec_warn_less env $environment pip3 install psycopg2 openpyxl python-ldap Pillow apache-superset==$(ynh_app_upstream_version) --upgrade
+    ynh_exec_warn_less env $environment pip3 install psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version) --upgrade
     ynh_exec_warn_less env $environment superset db upgrade
     ynh_exec_warn_less env $environment superset init
     deactivate
