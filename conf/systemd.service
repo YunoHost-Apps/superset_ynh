@@ -9,7 +9,7 @@ Group=__APP__
 
 WorkingDirectory=__INSTALL_DIR__/
 Environment=PATH=__LOCALPATH__
-Environment=FLASK_APP=__APP__
+Environment=FLASK_APP=superset
 Environment=SUPERSET_CONFIG_PATH=__INSTALL_DIR__/superset_config.py
 ExecStart=__INSTALL_DIR__/venv/bin/superset run -p __PORT__ --with-threads --reload
 StandardOutput=append:/var/log/__APP__/__APP__.log
