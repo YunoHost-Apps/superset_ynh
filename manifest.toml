@@ -1,0 +1,72 @@
+packaging_format = 2
+
+id = "superset"
+name = "Apache Superset"
+
+description.en = "Data exploration and visualization platform"
+description.fr = "Plateforme d&#39;exploration et de visualisation de données"
+
+version = "3.1.0~ynh1"
+
+maintainers = ["tituspijean"]
+
+[upstream]
+license = "Apache-2.0"
+website = "https://superset.apache.org/"
+
+admindoc = "https://superset.apache.org/docs/intro"
+
+code = "https://github.com/apache/superset"
+
+[integration]
+yunohost = '>= 11.2'
+architectures = "all"
+multi_instance = true
+ldap = true
+sso = false
+disk = "1G"
+ram.build = "500M"
+ram.runtime = "500M"
+
+[install]
+
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.init_admin_permission]
+    type = "group"
+    default = "admins"
+    ask.en = "Select which group should have Admin role in Superset. Other roles (Alpha, Gamma, Public) can be defined after installation."
+    ask.fr = "Sélectionnez quel groupe devrait avoir le rôle Admin dans Superset. Les autres rôles (Alpha, Gamma, Public) pourront être définis après installation."
+
+[resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://github.com/apache/superset/archive/refs/tags/3.1.0.tar.gz"
+        sha256 = "44747c9dd2aab96d5e1ba65559811785afe9139c3f9f85e55c8c4acc45e502df"
+        prefetch = false
+        #autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
+    admin.url = "/"
+    alpha.url = "/"
+    gamma.url = "/"
+
+    [resources.ports]
+    
+    [resources.apt]
+    packages = "python3-dev libpq-dev postgresql python3 python3-venv libldap2-dev libsasl2-dev libssl-dev"
+
+    [resources.database]
+    type = "postgresql"
