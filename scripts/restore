@@ -28,7 +28,7 @@ ynh_psql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < ./a
 
 ynh_psql_create_user "$userdata_db_user" "$userdata_db_pwd"
 ynh_psql_create_db "$userdata_db_name" "$userdata_db_user"
-ynh_psql_connect_as --user=$userdata_db_user --password=$userdata_db_pwd --database=$userdata_db_name < ./userb.sql
+ynh_psql_connect_as --user=$userdata_db_user --password=$userdata_db_pwd --database=$userdata_db_name < ./userdb.sql
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATIONS
