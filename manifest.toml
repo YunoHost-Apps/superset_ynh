@@ -59,9 +59,9 @@ ram.runtime = "500M"
 
     [resources.permissions]
     main.url = "/"
-    admin.url = "/"
-    alpha.url = "/"
-    gamma.url = "/"
+    admin.show_tile = false
+    alpha.show_tile = false
+    gamma.show_tile = false
 
     [resources.ports]
     
