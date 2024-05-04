@@ -29,7 +29,7 @@ chown $app:$app "$install_dir/superset_config.py"
 ynh_script_progression --message="Installing app..." --weight=5
 
 # Prepare environment
-python3.9 -m venv $install_dir/venv
+python3 -m venv $install_dir/venv
 localpath=$install_dir/venv/bin:$PATH
 environment="FLASK_APP=superset SUPERSET_CONFIG_PATH=$install_dir/superset_config.py SUPERSET_SECRET_KEY=$secret_key"
 export $environment

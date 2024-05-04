@@ -21,3 +21,5 @@ AUTH_ROLES_MAPPING = {
     "cn=__APP__.admin,ou=permission,dc=yunohost,dc=org": ["Admin"],
 }
 AUTH_ROLES_SYNC_AT_LOGIN = True
+
+ENABLE_PROXY_FIX = True

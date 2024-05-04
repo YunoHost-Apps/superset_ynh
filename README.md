@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install Apache Superset with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=superset)
 
-*[Read this README is other languages.](./ALL_README.md)*
+*[Read this README in other languages.](./ALL_README.md)*
 
 > *This package allows you to install Apache Superset quickly and simply on a YunoHost server.*  
 > *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
@@ -33,7 +33,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Shipped version:** 3.1.0~ynh1
+**Shipped version:** 4.0.0~ynh1
 
 ## Screenshots
 
