@@ -6,7 +6,7 @@ name = "Apache Superset"
 description.en = "Data exploration and visualization platform"
 description.fr = "Plateforme d'exploration et de visualisation de données"
 
-version = "4.0.1~ynh1"
+version = "4.0.1~ynh2"
 
 maintainers = ["tituspijean"]
 
