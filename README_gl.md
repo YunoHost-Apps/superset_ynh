@@ -5,7 +5,7 @@ NON debe editarse manualmente.
 
 # Apache Superset para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/superset.svg)](https://dash.yunohost.org/appci/app/superset) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/superset.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/superset.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/superset.svg)](https://ci-apps.yunohost.org/ci/apps/superset/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/superset.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/superset.maintain.svg)
 
 [![Instalar Apache Superset con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=superset)
 
@@ -33,7 +33,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Versión proporcionada:** 4.0.1~ynh2
+**Versión proporcionada:** 4.0.2~ynh1
 
 ## Capturas de pantalla
 
