@@ -6,7 +6,7 @@ name = "Apache Superset"
 description.en = "Data exploration and visualization platform"
 description.fr = "Plateforme d'exploration et de visualisation de données"
 
-version = "4.0.2~ynh1"
+version = "4.1.0~ynh1"
 
 maintainers = ["tituspijean"]
 
@@ -48,8 +48,8 @@ ram.runtime = "500M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/apache/superset/archive/refs/tags/4.0.2.tar.gz"
-        sha256 = "2f71cf37f93e1df02a0dd5b0668a1c4707c762d211b352e5147e2a514bda9977"
+        url = "https://github.com/apache/superset/archive/refs/tags/4.1.0.tar.gz"
+        sha256 = "01ea93c7547c38afc243eb0f3632866107625d067a521b20784ddf552b989f4a"
         prefetch = false
         autoupdate.strategy = "latest_github_release"
 
