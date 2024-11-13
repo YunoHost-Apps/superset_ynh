@@ -33,7 +33,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Shipped version:** 4.0.2~ynh1
+**Shipped version:** 4.1.0~ynh1
 
 ## Screenshots
 

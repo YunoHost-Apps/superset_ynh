@@ -33,7 +33,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Versión actual:** 4.0.2~ynh1
+**Versión actual:** 4.1.0~ynh1
 
 ## Capturas
 
@@ -49,7 +49,7 @@ Superset provides:
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/superset_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/superset_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
