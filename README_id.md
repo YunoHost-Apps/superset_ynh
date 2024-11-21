@@ -33,7 +33,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Versi terkirim:** 4.0.2~ynh1
+**Versi terkirim:** 4.1.1~ynh1
 
 ## Tangkapan Layar
 
@@ -43,7 +43,7 @@ Superset provides:
 
 - Website aplikasi resmi: <https://superset.apache.org/>
 - Dokumentasi admin resmi: <https://superset.apache.org/docs/intro>
-- Repositori kode aplikasi hulu: <https://github.com/apache/superset>
+- Depot kode aplikasi hulu: <https://github.com/apache/superset>
 - Gudang YunoHost: <https://apps.yunohost.org/app/superset>
 - Laporkan bug: <https://github.com/YunoHost-Apps/superset_ynh/issues>
 
