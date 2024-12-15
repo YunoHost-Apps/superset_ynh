@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Apache Superset untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/superset.svg)](https://ci-apps.yunohost.org/ci/apps/superset/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/superset.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/superset.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/superset)](https://ci-apps.yunohost.org/ci/apps/superset/)
+![Status kerja](https://apps.yunohost.org/badge/state/superset)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/superset)
 
 [![Pasang Apache Superset dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=superset)
 
