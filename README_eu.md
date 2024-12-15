@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Apache Superset YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/superset.svg)](https://ci-apps.yunohost.org/ci/apps/superset/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/superset.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/superset.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/superset)](https://ci-apps.yunohost.org/ci/apps/superset/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/superset)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/superset)
 
 [![Instalatu Apache Superset YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=superset)
 

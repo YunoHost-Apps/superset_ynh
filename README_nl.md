@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Apache Superset voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/superset.svg)](https://ci-apps.yunohost.org/ci/apps/superset/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/superset.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/superset.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/superset)](https://ci-apps.yunohost.org/ci/apps/superset/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/superset)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/superset)
 
 [![Apache Superset met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=superset)
 
