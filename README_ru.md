@@ -5,7 +5,9 @@
 
 # Apache Superset для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/superset.svg)](https://ci-apps.yunohost.org/ci/apps/superset/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/superset.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/superset.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/superset)](https://ci-apps.yunohost.org/ci/apps/superset/)
+![Состояние работы](https://apps.yunohost.org/badge/state/superset)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/superset)
 
 [![Установите Apache Superset с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=superset)
 
@@ -33,7 +35,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Поставляемая версия:** 4.1.1~ynh1
+**Поставляемая версия:** 4.1.2~ynh1
 
 ## Снимки экрана
 
