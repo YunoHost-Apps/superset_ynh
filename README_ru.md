@@ -35,7 +35,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Поставляемая версия:** 4.1.1~ynh1
+**Поставляемая версия:** 4.1.2~ynh1
 
 ## Снимки экрана
 

@@ -3,7 +3,7 @@ Este archivo README esta generado automaticamente<https://github.com/YunoHost/ap
 No se debe editar a mano.
 -->
 
-# Apache Superset para Yunohost
+# Apache Superset para YunoHost
 
 [![Nivel de integración](https://apps.yunohost.org/badge/integration/superset)](https://ci-apps.yunohost.org/ci/apps/superset/)
 ![Estado funcional](https://apps.yunohost.org/badge/state/superset)
@@ -35,7 +35,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Versión actual:** 4.1.1~ynh1
+**Versión actual:** 4.1.2~ynh1
 
 ## Capturas
 

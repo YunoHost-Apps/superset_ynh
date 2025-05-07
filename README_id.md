@@ -35,7 +35,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Versi terkirim:** 4.1.1~ynh1
+**Versi terkirim:** 4.1.2~ynh1
 
 ## Tangkapan Layar
 

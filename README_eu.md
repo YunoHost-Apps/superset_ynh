@@ -35,7 +35,7 @@ Superset provides:
 *-- Superset's Github repository*
 
 
-**Paketatutako bertsioa:** 4.1.1~ynh1
+**Paketatutako bertsioa:** 4.1.2~ynh1
 
 ## Pantaila-argazkiak
 
@@ -53,7 +53,7 @@ Superset provides:
 
 Bidali `pull request`a [`testing` abarrera](https://github.com/YunoHost-Apps/superset_ynh/tree/testing).
 
-`testing` abarra probatzeko, ondorengoa egin:
+`testing` abarra probatzeko, honakoa egin:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/superset_ynh/tree/testing --debug
