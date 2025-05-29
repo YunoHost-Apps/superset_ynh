@@ -4,8 +4,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# APP INITIAL CONFIGURATION
-#=================================================
 # ADD A CONFIGURATION
 #=================================================
 ynh_script_progression "Adding app's configuration file..."
@@ -14,9 +12,6 @@ secret_key=$(ynh_string_random --length=42)
 ynh_app_setting_set --key=secret_key --value=$secret_key
 
 ynh_config_add --template="superset_config.py" --destination="$install_dir/superset_config.py"
-
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/superset_config.py"
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:$app "$install_dir/superset_config.py"
 
 #=================================================
 # INSTALL APP
@@ -31,28 +26,12 @@ export $environment
 
 # Install and initialize Superset
 pushd $install_dir
-(
     source venv/bin/activate
     ynh_hide_warnings env $environment pip3 install "marshmallow<4" psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version)
     ynh_hide_warnings env $environment superset db upgrade
     ynh_hide_warnings env $environment superset init
     deactivate
-)
 popd
-
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:$app "$install_dir"
-#=================================================
-# CREATE AN ADDITIONAL DATABASE FOR USER DATA
-#=================================================
-
-userdata_db_user=${app}_userdata
-userdata_db_name=$userdata_db_user
-userdata_db_pwd=$(ynh_string_random)
-ynh_psql_create_user "$userdata_db_user" "$userdata_db_pwd"
-ynh_psql_create_db "$userdata_db_name" "$userdata_db_user"
-ynh_app_setting_set --key=userdata_db_user --value=$userdata_db_user
-ynh_app_setting_set --key=userdata_db_name --value=$userdata_db_name
-ynh_app_setting_set --key=userdata_db_pwd --value=$userdata_db_pwd
 
 #=================================================
 # SYSTEM CONFIGURATION

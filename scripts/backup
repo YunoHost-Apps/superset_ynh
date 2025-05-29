@@ -18,8 +18,7 @@ ynh_backup "/etc/systemd/system/$app.service"
 #=================================================
 ynh_print_info "Backing up the postgresql database..."
 
-ynh_psql_dump_db > ./appdb.sql
-ynh_psql_dump_db --database=$userdata_db_name > ./userdb.sql
+ynh_psql_dump_db > ./db.sql
 
 #=================================================
 # END OF SCRIPT
