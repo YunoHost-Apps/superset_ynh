@@ -10,13 +10,9 @@ ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
 
-chmod 400 "$install_dir/superset_config.py"
-chown -R $app:$app "$install_dir"
-
 #=================================================
 # RESTORE THE MYSQL DATABASE
 #=================================================
-
 ynh_script_progression "Restoring the PostgreSQL database..."
 
 ynh_psql_db_shell < ./appdb.sql

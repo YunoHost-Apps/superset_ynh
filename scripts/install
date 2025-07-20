@@ -4,8 +4,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# APP INITIAL CONFIGURATION
-#=================================================
 # ADD A CONFIGURATION
 #=================================================
 ynh_script_progression "Adding app's configuration file..."
@@ -14,9 +12,6 @@ secret_key=$(ynh_string_random --length=42)
 ynh_app_setting_set --key=secret_key --value=$secret_key
 
 ynh_config_add --template="superset_config.py" --destination="$install_dir/superset_config.py"
-
-chmod 400 "$install_dir/superset_config.py"
-chown $app:$app "$install_dir/superset_config.py"
 
 #=================================================
 # INSTALL APP
@@ -31,13 +26,11 @@ export $environment
 
 # Install and initialize Superset
 pushd $install_dir
-(
     source venv/bin/activate
     ynh_hide_warnings env $environment pip3 install "marshmallow<4" psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version)
     ynh_hide_warnings env $environment superset db upgrade
     ynh_hide_warnings env $environment superset init
     deactivate
-)
 popd
 
 chown -R $app:$app "$install_dir"
@@ -77,7 +70,7 @@ ynh_config_add_logrotate
 ynh_script_progression "Starting app's systemd service..."
 
 # Start a systemd service
-ynh_systemctl --service=$app --action="start"  --wait_until="Running on http" --timeout=30
+ynh_systemctl --service=$app --action="start" #--wait_until="Running on http" --timeout=30
 
 #=================================================
 # END OF SCRIPT

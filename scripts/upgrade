@@ -4,10 +4,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# ENSURE DOWNWARD COMPATIBILITY
-#=================================================
-
-#=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Stopping $app's systemd service..."
@@ -15,16 +11,11 @@ ynh_script_progression "Stopping $app's systemd service..."
 ynh_systemctl --service=$app --action="stop"
 
 #=================================================
-# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
-#=================================================
 # UPDATE A CONFIG FILE
 #=================================================
 ynh_script_progression "Updating configuration..."
 
 ynh_config_add --template="superset_config.py" --destination="$install_dir/superset_config.py"
-
-chmod 400 "$install_dir/superset_config.py"
-chown $app:$app "$install_dir/superset_config.py"
 
 #=================================================
 # UPGRADE THE APP APP
@@ -39,13 +30,11 @@ export $environment
 
 # Install and initialize Superset
 pushd $install_dir
-(
     source venv/bin/activate
     ynh_hide_warnings env $environment pip3 install psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version) --upgrade
     ynh_hide_warnings env $environment superset db upgrade
     ynh_hide_warnings env $environment superset init
     deactivate
-)
 popd
 
 chown -R $app:$app "$install_dir"
@@ -68,7 +57,7 @@ ynh_config_add_logrotate
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action="start"  --wait_until="Running on http" --timeout=30
+ynh_systemctl --service=$app --action="start" #--wait_until="Running on http" --timeout=30
 
 #=================================================
 # END OF SCRIPT
