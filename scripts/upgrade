@@ -23,15 +23,14 @@ ynh_config_add --template="superset_config.py" --destination="$install_dir/super
 ynh_script_progression "Upgrading app..."
 
 # Prepare environment
-python3 -m venv --upgrade $install_dir/venv
 localpath=$install_dir/venv/bin:$PATH
 environment="FLASK_APP=superset SUPERSET_CONFIG_PATH=$install_dir/superset_config.py SUPERSET_SECRET_KEY=$secret_key"
 export $environment
 
 # Install and initialize Superset
 pushd $install_dir
-    source venv/bin/activate
-    ynh_hide_warnings env $environment pip3 install psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version) --upgrade
+    python3 -m venv $install_dir/venv
+    ynh_hide_warnings $install_dir/venv/bin/pip install psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version) --upgrade
     ynh_hide_warnings env $environment superset db upgrade
     ynh_hide_warnings env $environment superset init
     deactivate

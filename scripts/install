@@ -26,8 +26,8 @@ export $environment
 
 # Install and initialize Superset
 pushd $install_dir
-    source venv/bin/activate
-    ynh_hide_warnings env $environment pip3 install "marshmallow<4" psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version)
+    python3 -m venv $install_dir/venv
+    ynh_hide_warnings $install_dir/venv/bin/pip install "marshmallow<4" psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version)
     ynh_hide_warnings env $environment superset db upgrade
     ynh_hide_warnings env $environment superset init
     deactivate
