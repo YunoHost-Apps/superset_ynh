@@ -22,8 +22,10 @@ code = "https://github.com/apache/superset"
 yunohost = '>= 11.2'
 architectures = "all"
 multi_instance = true
+
 ldap = true
 sso = false
+
 disk = "1G"
 ram.build = "500M"
 ram.runtime = "500M"
