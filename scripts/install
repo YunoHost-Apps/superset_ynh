@@ -7,82 +7,60 @@
 source /usr/share/yunohost/helpers
 
 #=================================================
-# APP INITIAL CONFIGURATION
-#=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding app's configuration file..."
+ynh_script_progression "Adding app's configuration file..."
 
 secret_key=$(ynh_string_random --length=42)
-ynh_app_setting_set --app=$app --key=secret_key --value=$secret_key
+ynh_app_setting_set --key=secret_key --value=$secret_key
 
-ynh_add_config --template="superset_config.py" --destination="$install_dir/superset_config.py"
-
-chmod 400 "$install_dir/superset_config.py"
-chown $app:$app "$install_dir/superset_config.py"
+ynh_config_add --template="superset_config.py" --destination="$install_dir/superset_config.py"
 
 #=================================================
 # INSTALL APP
 #=================================================
-ynh_script_progression --message="Installing app..." --weight=5
+ynh_script_progression "Installing app..."
 
 # Prepare environment
 python3 -m venv $install_dir/venv
-localpath=$install_dir/venv/bin:$PATH
+local_path=$install_dir/venv/bin:$PATH
 environment="FLASK_APP=superset SUPERSET_CONFIG_PATH=$install_dir/superset_config.py SUPERSET_SECRET_KEY=$secret_key"
 export $environment
 
 # Install and initialize Superset
 pushd $install_dir
-(
     source venv/bin/activate
-    ynh_exec_warn_less env $environment pip3 install "marshmallow<4" psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version)
-    ynh_exec_warn_less env $environment superset db upgrade
-    ynh_exec_warn_less env $environment superset init
+    ynh_hide_warnings env $environment pip3 install "marshmallow<4" psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version)
+    ynh_hide_warnings env $environment superset db upgrade
+    ynh_hide_warnings env $environment superset init
     deactivate
-)
 popd
-
-chown -R $app:$app "$install_dir"
-
-#=================================================
-# CREATE AN ADDITIONAL DATABASE FOR USER DATA
-#=================================================
-
-userdata_db_user=${app}_userdata
-userdata_db_name=$userdata_db_user
-userdata_db_pwd=$(ynh_string_random)
-ynh_psql_create_user "$userdata_db_user" "$userdata_db_pwd"
-ynh_psql_create_db "$userdata_db_name" "$userdata_db_user"
-ynh_app_setting_set --app=$app --key=userdata_db_user --value=$userdata_db_user
-ynh_app_setting_set --app=$app --key=userdata_db_name --value=$userdata_db_name
-ynh_app_setting_set --app=$app --key=userdata_db_pwd --value=$userdata_db_pwd
 
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding system configurations related to $app..."
+ynh_script_progression "Adding system configurations related to $app..."
 
 # Create a dedicated NGINX config using the conf/nginx.conf template
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 # Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 
 yunohost service add $app --log="/var/log/$app/$app.log"
 
 # Use logrotate to manage application logfile(s)
-ynh_use_logrotate
+ynh_config_add_logrotate
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting app's systemd service..."
+ynh_script_progression "Starting app's systemd service..."
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log" --line_match="Running on http" --timeout=30
+ynh_systemctl --service=$app --action="start"  --wait_until="Running on http" --timeout=30
 
 #=================================================
 # END OF SCRIPT
 #=================================================
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"

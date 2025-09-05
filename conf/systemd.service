@@ -6,11 +6,10 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
-
-WorkingDirectory=__INSTALL_DIR__/
-Environment=PATH=__LOCALPATH__
+Environment=PATH=__LOCAL_PATH__
 Environment=FLASK_APP=superset
 Environment=SUPERSET_CONFIG_PATH=__INSTALL_DIR__/superset_config.py
+WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/venv/bin/superset run -p __PORT__ --with-threads --reload
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
