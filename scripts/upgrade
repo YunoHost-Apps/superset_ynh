@@ -20,7 +20,7 @@ ynh_script_progression "Preparing the app's environment..."
 
 # Prepare environment
 python3 -m venv --upgrade $install_dir/venv
-localpath=$install_dir/venv/bin:$PATH
+local_path=$install_dir/venv/bin:$PATH
 environment="FLASK_APP=superset SUPERSET_CONFIG_PATH=$install_dir/superset_config.py SUPERSET_SECRET_KEY=$secret_key"
 export $environment
 
