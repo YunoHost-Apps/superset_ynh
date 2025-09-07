@@ -37,6 +37,19 @@ pushd $install_dir
 popd
 
 #=================================================
+# CREATE AN ADDITIONAL DATABASE FOR USER DATA
+#=================================================
+
+userdata_db_user=${app}_userdata
+userdata_db_name=$userdata_db_user
+userdata_db_pwd=$(ynh_string_random)
+ynh_psql_create_user "$userdata_db_user" "$userdata_db_pwd"
+ynh_psql_create_db "$userdata_db_name" "$userdata_db_user"
+ynh_app_setting_set --key=userdata_db_user --value=$userdata_db_user
+ynh_app_setting_set --key=userdata_db_name --value=$userdata_db_name
+ynh_app_setting_set --key=userdata_db_pwd --value=$userdata_db_pwd
+
+#=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
