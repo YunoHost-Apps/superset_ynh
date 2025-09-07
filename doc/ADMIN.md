@@ -8,11 +8,15 @@ Public (default YunoHost permission), Alpha, Gamma, Admin.
 You can add your first connected database to Superset with the following settings.
 This database is stored within your YunoHost server.
 
+- Type: PostgreSQL
 - Host: `127.0.0.1`
 - Port: `5432`
-- Database name: __USERDATA_DB_NAME__
-- Username: __USERDATA_DB_USER__
-- Password: __USERDATA_DB_PWD__
+- Database name: `__USERDATA_DB_NAME__`
+- Username: `__USERDATA_DB_USER__`
+- Password: `__USERDATA_DB_PWD__`
+- Display Name: as you wish
+- Additional Parameters: none
+- SSL: no
 
 # External databases
 
