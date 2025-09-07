@@ -18,6 +18,9 @@ ynh_restore "$install_dir"
 #=================================================
 ynh_script_progression "Restoring the PostgreSQL database..."
 
+ynh_psql_create_user "$userdata_db_user" "$userdata_db_pwd"
+ynh_psql_create_db "$userdata_db_name" "$userdata_db_user"
+ynh_psql_db_shell < ./userdb.sql
 ynh_psql_db_shell < ./db.sql
 
 #=================================================

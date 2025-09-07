@@ -30,11 +30,28 @@ export $environment
 # Install and initialize Superset
 pushd $install_dir
     source venv/bin/activate
+    # Core dependencies
     ynh_hide_warnings env $environment pip3 install "marshmallow<4" psycopg2 openpyxl python-ldap Pillow sqlalchemy-bigquery apache-superset==$(ynh_app_upstream_version)
+    # Extra dependencies for external databases
+    ynh_hide_warnings env $environment pip3 install mysqlclient mysql-connector-python pymssql
+    # Initialize the app
     ynh_hide_warnings env $environment superset db upgrade
     ynh_hide_warnings env $environment superset init
     deactivate
 popd
+
+#=================================================
+# CREATE AN ADDITIONAL DATABASE FOR USER DATA
+#=================================================
+
+userdata_db_user=${app}_userdata
+userdata_db_name=$userdata_db_user
+userdata_db_pwd=$(ynh_string_random)
+ynh_psql_create_user "$userdata_db_user" "$userdata_db_pwd"
+ynh_psql_create_db "$userdata_db_name" "$userdata_db_user"
+ynh_app_setting_set --key=userdata_db_user --value=$userdata_db_user
+ynh_app_setting_set --key=userdata_db_name --value=$userdata_db_name
+ynh_app_setting_set --key=userdata_db_pwd --value=$userdata_db_pwd
 
 #=================================================
 # SYSTEM CONFIGURATION
