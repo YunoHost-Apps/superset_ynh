@@ -6,7 +6,7 @@ name = "Apache Superset"
 description.en = "Data exploration and visualization platform"
 description.fr = "Plateforme d'exploration et de visualisation de données"
 
-version = "6.0.0~ynh1"
+version = "6.1.0~ynh1"
 
 maintainers = ["tituspijean"]
 
@@ -19,7 +19,7 @@ admindoc = "https://superset.apache.org/docs/intro"
 code = "https://github.com/apache/superset"
 
 [integration]
-yunohost = '>= 12.0.9'
+yunohost = '>= 12.1.39'
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -51,8 +51,8 @@ ram.runtime = "500M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/apache/superset/archive/refs/tags/6.0.0.tar.gz"
-        sha256 = "151c2814074ef7ea8c3021d0f754bb6fb8a49ed49d0f5a64708c3633cc06169c"
+        url = "https://github.com/apache/superset/archive/refs/tags/6.1.0.tar.gz"
+        sha256 = "0161f39182b5916ac8f5bf868380857a64f38e1ca52f118daaa0023701f9a62a"
         prefetch = false
         autoupdate.strategy = "latest_github_release"
 
